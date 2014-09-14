@@ -20,9 +20,21 @@ public class ScrollViewFriendlyViewPager extends ViewPager {
         super(context, attrs);
     }
 
+
+    /*From ViewPager source:*/
+        /*
+         * This method JUST determines whether we want to intercept the motion.
+         * If we return true, onMotionEvent will be called and we do the actual
+         * scrolling there.
+         */
+    /*From ViewPager source:*/
+
     @Override
     public boolean onInterceptTouchEvent(MotionEvent ev) {
         switch (ev.getAction()) {
+
+            //AKA the Madonna MotionEvent
+            //because the pager has been touched for the very first time
             case MotionEvent.ACTION_DOWN:
                 //set distances to null
                 xDistance = 0f;
@@ -31,6 +43,7 @@ public class ScrollViewFriendlyViewPager extends ViewPager {
                 previousX = ev.getX();
                 previousY = ev.getY();
                 break;
+
             case MotionEvent.ACTION_MOVE:
                 final float newX = ev.getX();
                 final float newY = ev.getY();
