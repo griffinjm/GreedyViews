@@ -12,6 +12,9 @@ public class ScrollViewFriendlyViewPager extends ViewPager {
 
     private float xDistance, yDistance, previousX, previousY;
 
+    //required to allow for slight movement when clicking on an internal view
+    private final float touchSlop = 30f;
+
     public ScrollViewFriendlyViewPager(Context context) {
         super(context);
     }
@@ -54,8 +57,9 @@ public class ScrollViewFriendlyViewPager extends ViewPager {
                 previousX = newX;
                 previousY = newY;
                 //if angle > 45 degrees
-                if(xDistance > yDistance){
-                    return true;
+                if (xDistance > yDistance) {
+                    //if the x motion is greater then X pixels then intercept
+                    return xDistance > touchSlop;
                 }
         }
         //else leave normal implementation figure out what to do
