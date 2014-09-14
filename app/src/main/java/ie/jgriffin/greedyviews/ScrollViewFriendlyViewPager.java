@@ -34,10 +34,10 @@ public class ScrollViewFriendlyViewPager extends ViewPager {
             case MotionEvent.ACTION_MOVE:
                 final float newX = ev.getX();
                 final float newY = ev.getY();
-
-                xDistance += newX - previousX;
-                yDistance += newY - previousY;
-
+                //use absolute value here to account for negative values
+                xDistance += Math.abs(newX - previousX);
+                yDistance += Math.abs(newY - previousY);
+                //store values for next call
                 previousX = newX;
                 previousY = newY;
                 //if angle > 45 degrees
