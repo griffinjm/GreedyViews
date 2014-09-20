@@ -7,6 +7,10 @@ import android.view.MotionEvent;
 
 /**
  * Created by JGriffin on 13/09/2014.
+ *
+ * This view was created to allow easy use of a ScrollView within a ViewPager.
+ * The override of onInterceptTouchEvent prevents the ScrollView from receiving the
+ * touch event unless the swipe is more vertical then horizontal i.e. above 45 degrees.
  */
 public class ScrollViewFriendlyViewPager extends ViewPager {
 
