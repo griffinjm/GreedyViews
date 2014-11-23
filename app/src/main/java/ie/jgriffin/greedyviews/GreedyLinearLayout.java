@@ -9,6 +9,8 @@ import android.widget.LinearLayout;
 
 /**
  * Created by JGriffin on 06/09/2014.
+ * 
+ * The override of onInterceptTouchEvent prevents descendant views from receiving the touch event. 
  */
 public class GreedyLinearLayout extends LinearLayout {
     public GreedyLinearLayout(Context context) {
@@ -27,7 +29,7 @@ public class GreedyLinearLayout extends LinearLayout {
     @Override
     public boolean onInterceptTouchEvent(MotionEvent ev) {
         //return super.onInterceptTouchEvent(ev);
-        //prevent the touch event being passed to the children of this view
+        //prevent the touch event being passed to the descendants of this view
         return true;
     }
 }

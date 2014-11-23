@@ -7,6 +7,8 @@ import android.widget.RelativeLayout;
 
 /**
  * Created by JGriffin on 06/09/2014.
+ *
+ * The override of onInterceptTouchEvent prevents descendant views from receiving the touch event. 
  */
 public class GreedyRelativeLayout extends RelativeLayout {
     public GreedyRelativeLayout(Context context) {

@@ -38,10 +38,8 @@ public class ScrollViewFriendlyViewPager extends ViewPager {
 
     @Override
     public boolean onInterceptTouchEvent(MotionEvent ev) {
-        switch (ev.getAction()) {
-
-            //AKA the Madonna MotionEvent
-            //because the pager has been touched for the very first time
+        switch (ev.getAction()) {            
+            
             case MotionEvent.ACTION_DOWN:
                 //set distances to null
                 xDistance = 0f;
